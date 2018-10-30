@@ -22,7 +22,7 @@ public class ResourceLoaderFactory<T> {
 
         String url = urlFormat;
         if (pathParams != null && pathParams.length > 0) {
-            url = String.format(urlFormat, pathParams);
+            url = String.format(urlFormat, (Object[]) pathParams);
         }
 
         return new ResourceLoader<T>(contextActivity, url, requiredScopes, new Handler(), classType);
